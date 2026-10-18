@@ -41,10 +41,10 @@ async function chapter(title, narration, seconds, action = async () => {}) {
 let summary;
 let completed = false;
 try {
-  const health = await context.request.get(`${baseURL}/api/health/`);
+  const health = await context.request.get(`${baseURL}/api/health/`, { timeout: 90000 });
   expect((await health.json()).mode).toBe("live");
-  await page.goto(baseURL);
-  await expect(page.locator(".gm-style")).toBeVisible();
+  await page.goto(baseURL, { timeout: 90000 });
+  await expect(page.locator(".gm-style")).toBeVisible({ timeout: 20000 });
   await pause(4000);
   await expect(page.locator(".map-error")).toHaveCount(0);
   await chapter(
@@ -181,7 +181,7 @@ try {
   await chapter(
     "Architecture and conclusion",
     "The frontend is React and TypeScript. Django owns validation, provider access, weather-risk calculations and route ranking. Google Routes credentials remain on the server; the map uses a separate website-restricted browser key. The cloud image serves the frontend and API from one origin through Gunicorn and WhiteNoise. Automated tests cover the domain rules, provider failures and browser flows. The recording demonstrates a real live request; weather sampling and ETA estimates still have limitations, and drivers must verify official road conditions.",
-    40,
+    50,
     async () => {
       await page
         .getByRole("heading", { name: "Compare your routes" })

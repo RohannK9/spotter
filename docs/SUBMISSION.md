@@ -1,5 +1,12 @@
 # Submission notes
 
+## Live links
+
+- Application: https://spotter-toz3.onrender.com
+- API health: https://spotter-toz3.onrender.com/api/health/
+- Source: https://github.com/RohannK9/spotter (private; grant reviewers access separately).
+- Video: completed 5:08 hosted walkthrough at `artifacts/demo/spotter-live.mp4`, with timed `artifacts/demo/narration.md`; see `docs/DEMO_VIDEO.md`. The recording is silent and ready for a voiceover or upload.
+
 ## What was implemented
 
 - React/TypeScript/Vite frontend and Django REST API, without a database.

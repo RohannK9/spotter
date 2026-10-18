@@ -4,7 +4,7 @@
 
 `docker/Dockerfile.web` builds a single non-root service containing the Vite frontend and Django API. Gunicorn handles requests; WhiteNoise serves only `frontend/dist`. The app binds to `PORT` (default 8000). No database, persistent disk or separate frontend host is required. `railway.json` sets the Dockerfile, `/api/health/` startup check and bounded restart policy. Local two-container Compose remains supported.
 
-Current target: Render free web service. Not publicly deployed yet. Railway authentication was verified, but project creation was rejected because the account's trial expired; the user chose Render instead. No Railway project or paid service was created.
+Deployed service: [https://spotter-toz3.onrender.com](https://spotter-toz3.onrender.com), using the selected Render free web service. Railway authentication was verified, but project creation was rejected because the account's trial expired; the user chose Render instead. No Railway project or paid service was created.
 
 ## Render launch (selected provider)
 

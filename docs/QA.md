@@ -28,8 +28,8 @@ After the user enabled billing and recreated containers with live mode, both con
 
 ## Pending external verification
 
-- Public frontend/backend deployment, deployed CORS, credentials, HTTPS, refresh/deep links and fresh-browser network/console inspection.
-- Verify the approved Google Maps live-map implementation with Maps JavaScript API enabled and the hosted domain allowed.
+- Long-running availability, load testing and comprehensive manual accessibility review are outside the completed smoke checks.
+- Free-tier cold-start behavior has not been measured. This single-page app has no client-side deep-link routes.
 
 ## Operational limits to remember
 
@@ -42,3 +42,17 @@ After the user enabled billing and recreated containers with live mode, both con
 - Render Free blueprint prepared; public deployment pending. Railway project creation was rejected due to an expired trial and no Railway service was created.
 - The live video recorder and timed narration generator are implemented. The first take stopped at the Google Maps authorization check; no completed video is claimed.
 - User explicitly approved creation of a private RohannK9/spotter repository and the initial commit/push. Secret scan passed before repository publication; .env and generated recordings are ignored.
+
+## Render deployment — 2026-10-18
+
+- Public URL: https://spotter-toz3.onrender.com (frontend and API share one service). HTTPS root, live health endpoint, privacy and terms pages returned HTTP 200.
+- Hosted Google location searches for Denver and Salt Lake City succeeded. A real analysis returned three alternatives, a recommendation, 100% checkpoint coverage on every route, 48-hour corridor forecasts and no fallback notices.
+- Initial hosted Google Maps check returned `RefererNotAllowedMapError`; the user subsequently added the exact Render origin to the browser key restrictions. A fresh-browser recheck passed after the restriction update propagated. Google Maps loaded without API errors. Live route selection, checkpoint popup open/close and +24h forecast changes passed with no page errors. Desktop and 390px mobile screenshots were inspected; no horizontal page overflow was found. The hosted recording completed successfully; see the final evidence below.
+
+## Completed hosted demo recording — 2026-10-18
+
+- Recorded the actual https://spotter-toz3.onrender.com UI with live Google location search, routing and Google Maps plus Open-Meteo weather. The recorded Denver → Salt Lake City trip returned three routes, a recommendation, 100% checkpoint weather coverage, 48-hour corridor forecasts on all routes and no fallback notices.
+- Verified route selection, checkpoint InfoWindow, weather-layer toggle and slider movement through the available 48 hours. Exactly one analysis request occurred throughout the walkthrough; page errors were empty. Zero-weight validation and an explicitly simulated offline connection were demonstrated, then connectivity restored.
+- Export: `artifacts/demo/spotter-live.mp4`, H.264, 1440×1000, 307.84 seconds, approximately 8.6 MB, chapter subtitle track, no audio track. Matching timed voiceover script: `artifacts/demo/narration.md`. Generated media remains local and Git-ignored.
+- Reviewed extracted video frames showing route comparison, the checkpoint popup, forecast controls and visible Google attribution. Desktop/mobile screenshots from the hosted browser smoke check were also inspected.
+- Public service and recording are complete; free-tier cold-start behavior, load testing and comprehensive accessibility auditing remain outside this smoke verification.

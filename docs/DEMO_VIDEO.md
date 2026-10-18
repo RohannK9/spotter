@@ -2,6 +2,10 @@
 
 The automated recorder produces silent browser footage and a matching narration script. It records the actual running UI and real provider responses; it does not mock results or embed API keys. Use the hosted URL once deployment and Google browser-key restrictions are verified.
 
+## Completed recording
+
+Recorded from **https://spotter-toz3.onrender.com** on October 18, 2026. The local MP4 is **5:08**, 1440×1000, approximately 8.6 MB, with chapter subtitles and no audio. `artifacts/demo/narration.md` contains the matching timed voiceover. Live verification returned three routes, full checkpoint weather, 48-hour forecasts, one analysis request and no page errors. The video is not uploaded to a video-sharing service.
+
 ## Record
 
 Requires the frontend dependencies, Playwright Chromium and FFmpeg. Ensure the target app reports `live` at `/api/health/` and has a working Google map.
