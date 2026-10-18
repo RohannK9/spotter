@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: spotter
+    runtime: docker
+    plan: free
+    region: oregon
+    dockerfilePath: ./docker/Dockerfile.web
+    dockerContext: .
+    healthCheckPath: /api/health/
+    autoDeployTrigger: "off"
+    envVars:
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+      - key: DJANGO_DEBUG
+        value: "false"
+      - key: DJANGO_ALLOWED_HOSTS
+        value: localhost,127.0.0.1
+      - key: PROVIDER_MODE
+        value: live
+      - key: GOOGLE_ROUTES_API_KEY
+        sync: false
+      - key: VITE_GOOGLE_MAPS_API_KEY
+        sync: false
+      - key: WEB_CONCURRENCY
+        value: "1"
+      - key: PORT
+        value: "10000"
