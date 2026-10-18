@@ -10,7 +10,7 @@ Current target: Render free web service. Not publicly deployed yet. Railway auth
 
 `render.yaml` defines one free Docker web service in Oregon, a generated Django secret, one Gunicorn worker with four threads, port 10000, a health check, and manual deployments. It requests the two Google keys through Render's environment configuration. There is no database or paid compute plan in this blueprint.
 
-1. The user approved the initial commit and push to a new private `RohannK9/spotter` GitHub repository.
+1. The user approved and completed initial source publication to the private [RohannK9/spotter](https://github.com/RohannK9/spotter) repository (branch `master`).
 2. Connect Render to that repository (grant access only to this repository if using a GitHub App).
 3. Create a Blueprint from `render.yaml`, or a **Web Service** with language **Docker**, Dockerfile path `docker/Dockerfile.web`, build context `.`, and instance type **Free**.
 4. Set the private Routes/Geocoding key and separate public Maps JavaScript browser key as requested by the blueprint. Do not paste keys into chat or source. The Dockerfile declares only the public browser key as a build argument; the server key remains runtime-only.
